@@ -8,7 +8,9 @@
   "scripts": {
     "start": "ts-node-dev -r tsconfig-paths/register src/index.ts"
   },
-  "dependencies": {},
+  "dependencies": {
+    "airtable": "^0.11.4"
+  },
   "devDependencies": {
     "@types/node": "^18.7.6",
     "dotenv": "^16.0.1",
