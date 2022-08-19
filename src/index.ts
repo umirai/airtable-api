@@ -1,6 +1,12 @@
-import 'dotenv/config'
-import { sum } from '@/function'
+import { createAirtable } from '@/infra/airtable-client';
+import { UserRepository } from '@/infra/user-repository';
 
-console.log(sum(1,2));
-console.log(process.env.AIRTABLE_API_KEY)
-console.log(process.env.AIRTABLE_BASE_ID)
+const airtable = createAirtable('users');
+const userRepository = new UserRepository(airtable);
+
+(async () => {
+  // 確認用
+  // console.log(await userRepository.index())
+  // console.log(await userRepository.findByEmail('aaa@example.com'))
+  // console.log(await userRepository.insert({ username: 'suzuki-taro', email: 'taro@example.com' }))
+})();
